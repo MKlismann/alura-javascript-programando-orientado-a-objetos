@@ -5,6 +5,7 @@
 import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente {
+    static numeroDeContas = 0;
     agencia;
 
     _cliente;
@@ -16,12 +17,18 @@ export class ContaCorrente {
     get cliente() {
         return this._cliente;
     }
-    
+
     _saldo = 0; //#saldo (convenção de atributo privado, porém ainda em discussão pela comunidade: https://github.com/tc39/proposal-class-fields#private-fields).
     get saldo() {
         return this._saldo;
     }
-    
+
+    constructor(agencia, cliente){
+        this.agencia = agencia;
+        this.cliente = cliente; // Utilizando o setter que contem a verificação do instanceof
+        ContaCorrente.numeroDeContas += 1;
+    }
+
     sacar(valor) {
         if (this._saldo < valor || valor < 0) return; //Se tiver _saldo suficiente
 
