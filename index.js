@@ -7,6 +7,9 @@
             - "Early return": Verificação de todas as condições indesejadas primeiro.
             - Importando classes
             - Tipos de valor e de referência
+            - Null (aplica NADA ao espaço de memória; intencional) e Undefined (recurso não definido previamente, por acaso)
+            - Getters e Setters
+            - instanceof
         - OBS: Imagine o seguinte cenário:
             - Criaremos um sistema de contas correntes e cadastro de clientes para o cliente 'ByteBank'.
             - O sistema deve permitir a manipulação do saldo dos usuários e operações de transferências bancárias.
@@ -40,8 +43,8 @@ const contaCorrenteCliente2 = new ContaCorrente();
 contaCorrenteCliente2.agencia = 1002;
 contaCorrenteCliente2.cliente = cliente2;
 
-console.log(contaCorrenteCliente1);
-console.log(contaCorrenteCliente2);
+console.log(contaCorrenteCliente1.saldo);
+console.log(contaCorrenteCliente2.saldo);
 contaCorrenteCliente1.transferir(100, contaCorrenteCliente2);
-console.log(contaCorrenteCliente1);
-console.log(contaCorrenteCliente2);
+console.log(contaCorrenteCliente1.saldo);
+console.log(contaCorrenteCliente2.saldo);

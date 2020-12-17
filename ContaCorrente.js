@@ -2,12 +2,26 @@
     Arquivos que iniciam com letra maiúscula são classes.
 */
 
+import { Cliente } from "./Cliente.js";
+
 export class ContaCorrente {
     agencia;
-    cliente;
 
+    _cliente;
+    set cliente(valor) {
+        if (valor instanceof Cliente) {
+            this._cliente = valor;
+        }
+    }
+    get cliente() {
+        return this._cliente;
+    }
+    
     _saldo = 0; //#saldo (convenção de atributo privado, porém ainda em discussão pela comunidade: https://github.com/tc39/proposal-class-fields#private-fields).
-
+    get saldo() {
+        return this._saldo;
+    }
+    
     sacar(valor) {
         if (this._saldo < valor || valor < 0) return; //Se tiver _saldo suficiente
 
@@ -21,7 +35,7 @@ export class ContaCorrente {
         this._saldo += valor;
     }
 
-    transferir(valor, contaDestino){
+    transferir(valor, contaDestino) {
         const valorSacado = this.sacar(valor);
         contaDestino.depositar(valorSacado);
     }
