@@ -1,0 +1,21 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Projeto do ByteBank para seus clientes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKlismann/alura-javascript-programando-orientado-a-objetos.git"
+  },
+  "author": "MKlismann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MKlismann/alura-javascript-programando-orientado-a-objetos/issues"
+  },
+  "homepage": "https://github.com/MKlismann/alura-javascript-programando-orientado-a-objetos#readme",
+  "type": "module"
+}
